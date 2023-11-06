@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { Ubuntu } from 'next/font/google';
-import Image from 'next/image';
-import Link from 'next/link';
+import { Ubuntu } from "next/font/google";
+import Image from "next/image";
+import Link from "next/link";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 import {
   LayoutDashboard,
   MessageSquare,
@@ -13,52 +13,52 @@ import {
   Music,
   CodeIcon,
   Settings,
-} from 'lucide-react';
-import { usePathname } from 'next/navigation';
+} from "lucide-react";
+import { usePathname } from "next/navigation";
 
-const ubuntu = Ubuntu({ weight: '700', subsets: ['latin'] });
+const ubuntu = Ubuntu({ weight: "700", subsets: ["latin"] });
 
 const routes = [
   {
-    label: 'Dashboard',
+    label: "Dashboard",
     icon: LayoutDashboard,
-    href: '/Dashboard',
-    color: 'text-sky-500',
+    href: "/Dashboard",
+    color: "text-sky-500",
   },
   {
-    label: 'Conversation',
+    label: "Conversation",
     icon: MessageSquare,
-    href: '/Conversation',
-    color: 'text-violet-500',
+    href: "/Conversation",
+    color: "text-violet-500",
   },
   {
-    label: 'Image Generation',
+    label: "Image Generation",
     icon: ImageIcon,
-    href: '/Image',
-    color: 'text-pink-700',
+    href: "/Image",
+    color: "text-pink-700",
   },
   {
-    label: 'Video Generation',
+    label: "Video Generation",
     icon: VideoIcon,
-    href: '/Video',
-    color: 'text-orange-700',
+    href: "/Video",
+    color: "text-orange-700",
   },
   {
-    label: 'Music Generation',
+    label: "Music Generation",
     icon: Music,
-    href: '/Music',
-    color: 'text-emerald-700',
+    href: "/Music",
+    color: "text-emerald-700",
   },
   {
-    label: 'Code Generation',
+    label: "Code Generation",
     icon: CodeIcon,
-    href: '/Code',
-    color: 'text-green-700',
+    href: "/Code",
+    color: "text-green-700",
   },
   {
-    label: 'Settings',
+    label: "Settings",
     icon: Settings,
-    href: '/Settings',
+    href: "/Settings",
   },
 ];
 
@@ -72,7 +72,7 @@ const Sidebar = () => {
           <div className="relative w-8 h-8 mr-4">
             <Image fill alt="Logo" src="/logo.png" />
           </div>
-          <h1 className={(cn('text-2xl font-black'), ubuntu.className)}>
+          <h1 className={(cn("text-3xl font-black"), ubuntu.className)}>
             Alawi
           </h1>
         </Link>
@@ -82,14 +82,14 @@ const Sidebar = () => {
               href={route.href}
               key={route.href}
               className={cn(
-                'text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-lg transition',
+                "text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-lg transition",
                 pathname === route.href
-                  ? 'text-white bg-white/10'
-                  : 'text-zinc-400'
+                  ? "text-white bg-white/10"
+                  : "text-zinc-400"
               )}
             >
               <div className="flex items-center flex-1">
-                <route.icon className={cn('w-4 h-4 mr-3', route.color)} />
+                <route.icon className={cn("w-4 h-4 mr-3", route.color)} />
                 {route.label}
               </div>
             </Link>
